@@ -1,0 +1,28 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.quote-section {
+  @include size(100%, 100vh);
+  background: linear-gradient(
+    264deg,
+    $gradient-dark 16%,
+    $gradient-light 100%
+  );
+  @include flex-center(column);
+  
+  &__carousel-container {
+    @include size(80%, 40%);
+    background-color: $background-light;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 1px $shadow;
+  }
+}
+
+@media (max-width: 551px) {
+  .quote-section {
+    &__carousel-container {
+      @include size(100%, 100%);
+      border-radius: 0px;
+    }
+  }
+}

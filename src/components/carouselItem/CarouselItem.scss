@@ -1,0 +1,46 @@
+@import "/src/styles/mixins";
+
+.custom-carousel {
+  width: 90%;
+  margin: auto;
+
+  article {
+    @include size(100%, 100%);
+    @include flex-center(row);
+    gap: 20px;
+  }
+
+  &__image-container {
+    @include size(100px, 100px);
+    border-radius: 100%;
+
+    img {
+      object-fit: cover;
+      @include size(100px, 100px);
+      border-radius: 100%;
+    }
+  }
+
+  &__text-container {
+    @include size(60%, 90%);
+
+    p {
+      font-style: italic;
+    }
+
+    p:last-child {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .custom-carousel {
+    width: 80%;
+
+    article {
+      @include size(100%, 100%);
+      @include flex-center(column);
+    }
+  }
+}
